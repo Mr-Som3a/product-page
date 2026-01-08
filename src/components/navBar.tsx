@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useCart } from "../store/contextApi";
 import CartCard from "./cartCard";
+import menuImg from "../assets/icon-menu.svg"
+import cartImg from "../assets/icon-cart.svg"
+import closeImg from "../assets/icon-close.svg"
+import avatarImg from "../assets/image-avatar.png"
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -26,7 +30,7 @@ function NavBar() {
     <nav className=" md:w-4/5 mx-auto flex items-center justify-between px-6 py-4 ">
       {/* mobile burger icon */}
       <button onClick={showMenu} className="md:hidden mx-2">
-        <img src="src/assets/icon-menu.svg" alt="" />
+        <img src={menuImg} alt="" />
       </button>
       {/* sideBar */}
       <div
@@ -50,7 +54,7 @@ function NavBar() {
       }`}
         >
           <button onClick={showMenu}>
-            <img src="src/assets/icon-close.svg" alt="Close menu" />
+            <img src={closeImg} alt="Close menu" />
           </button>
           <ul className="text-lg font-bold space-y-4 mt-10 text-gray-700">
             {menuSection.map((section) => (
@@ -78,15 +82,15 @@ function NavBar() {
       </div>
       {/* links & profile */}
       <div className="flex flex-1 justify-end space-x-4 items-center ">
-        <button className="relative" onClick={handleCart}>
+        <button className="relative cursor-pointer" onClick={handleCart}>
           {item.length > 0 && (
             <div className="absolute -right-1 -top-2 w-5 h-4 rounded-full z-10 bg-amber-600 text-xs text-white">
               {1}
             </div>
           )}
-          <img className="" src="src/assets/icon-cart.svg" alt="" />
+          <img className="" src={cartImg} alt="" />
         </button>
-        <img className="w-8" src="src/assets/image-avatar.png" alt="" />
+        <img className="w-8" src={avatarImg} alt="" />
       </div>
 
       <div
@@ -99,7 +103,7 @@ function NavBar() {
       >
         <h3 className="font-semibold p-4 self-start">Cart</h3>
         <hr />
-        <div className="h-32 flex w-full">
+        <div className="h-32 justify-center items-center flex w-full">
           {item.length > 0 ? (
             item.map((ele) => (
               <div className="flex-1" key={ele.id}>

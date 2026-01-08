@@ -15,7 +15,7 @@ export default function CartCard({item}:CartCardProp){
     const {setItem}= useCart()
   const total = 125*item.count
     return (
-    <div className='flex space-x-7 items-center h-full p-10  '>
+    <div className='flex space-x-7 items-center h-full p-6  '>
         <figure>
             <img className="w-20 rounded  " src={Img} alt={item.alt} />
         </figure>

@@ -3,6 +3,8 @@ import img1 from "../../images/image-product-1.jpg";
 import img2 from "../../images/image-product-2.jpg";
 import img3 from "../../images/image-product-3.jpg";
 import img4 from "../../images/image-product-4.jpg";
+import prevImg from "../assets/icon-previous.svg"
+import nextImg  from "../assets/icon-next.svg"
 export default function HeroSection() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   interface ImageType {
@@ -57,10 +59,10 @@ export default function HeroSection() {
         {/* Mobile slider */}
         <div className="absolute md:hidden top-[45%] flex justify-between w-full px-4  ">
           <button onClick={handlePrv} className="flex justify-center items-center w-10 h-10 rounded-full  bg-white">
-            <img src="src/assets/icon-previous.svg" alt="" />
+            <img src={prevImg} alt="" />
           </button>
           <button onClick={handleNext} className="flex justify-center items-center w-10 h-10 rounded-full  bg-white">
-            <img src="src/assets/icon-next.svg" alt="" />
+            <img src={nextImg} alt="" />
           </button>
         </div>
 
