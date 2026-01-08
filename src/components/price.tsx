@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useCart } from "../store/contextApi";
 import cartImg from "../assets/icon-cart.svg";
+import minusImg from "../assets/icon-minus.svg"
+import plusImg from "../assets/icon-plus.svg"
 export default function Price() {
   const { setItem } = useCart();
   const [count, setCount] = useState(0);
@@ -35,14 +37,14 @@ export default function Price() {
               className="cursor-pointer"
               onClick={() => count > 0 && setCount((count) => count - 1)}
             >
-              <img src="src/assets/icon-minus.svg" alt="" />
+              <img src={minusImg} alt="" />
             </button>
             <span className="font-semibold">{count}</span>
             <button
               className="cursor-pointer"
               onClick={() => setCount((count) => count + 1)}
             >
-              <img src="src/assets/icon-plus.svg" alt="" />
+              <img src={plusImg} alt="" />
             </button>
           </div>
           <button
